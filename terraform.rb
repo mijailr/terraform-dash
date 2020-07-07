@@ -18,8 +18,8 @@ cheatsheet do
 
     entry do
       notes <<-'NOTES'
-      Builds or changes infrastructure according to Terraform configuration
-      files in `DIR`.
+      __Builds or changes infrastructure according to Terraform configuration
+      files in `DIR`__
 
       By default, apply scans the current directory for the configuration
       and applies the changes appropriately. However, a path to another
