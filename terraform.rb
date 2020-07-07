@@ -31,102 +31,102 @@ cheatsheet do
     end
 
     entry do
-      command '-auto-approve'
-      name 'Skip interactive approval of plan before applying.'
+      name '-auto-approve'
+      notes 'Skip interactive approval of plan before applying.'
     end
 
     entry do
-      command '-backup=path'
-      name <<-'NAME'
+      name '-backup=path'
+      notes <<-'NOTES'
       Path to backup the existing state file before modifying.
       Defaults to the `-state-out` path with `.backup` extension.
       Set to `-` to disable backup.
-      NAME
+      NOTES
     end
 
     entry do
-      command '-compact-warnings'
-      name <<-'NAME'
+      name '-compact-warnings'
+      notes <<-'NOTES'
       If Terraform produces any warnings that are not
       accompanied by errors, show them in a more compact
       form that includes only the summary messages.
-      NAME
+      NOTES
     end
 
     entry do
-      command '-lock=true'
-      name 'Lock the state file when locking is supported.'
+      name '-lock=true'
+      notes 'Lock the state file when locking is supported.'
     end
 
     entry do
-      command '-lock-timeout=0s'
-      name 'Duration to retry a state lock.'
+      name '-lock-timeout=0s'
+      notes 'Duration to retry a state lock.'
     end
 
     entry do
-      command '-input=true'
-      name 'Ask for input for variables if not directly set.'
+      name '-input=true'
+      notes 'Ask for input for variables if not directly set.'
     end
 
     entry do
-      command '-no-color'
-      name 'If specified, output won\'t contain any color.'
+      name '-no-color'
+      notes 'If specified, output won\'t contain any color.'
     end
 
     entry do
-      command '-parallelism=n'
-      name 'Limit the number of parallel resource operations.'
+      name '-parallelism=n'
+      notes 'Limit the number of parallel resource operations.'
     end
 
     entry do
-      command '-refresh=true'
-      name <<-'NAME'
+      name '-refresh=true'
+      notes <<-'NOTES'
       Update state prior to checking for differences. This
       has no effect if a plan file is given to apply.
-      NAME
+      NOTES
     end
 
     entry do
-      command '-state=path'
-      name <<-'NAME'
+      name '-state=path'
+      notes <<-'NOTES'
       Path to read and save state (unless state-out
       is specified). Defaults to `terraform.tfstate`
-      NAME
+      NOTES
     end
 
     entry do
-      command '-state-out=path'
-      name <<-'NAME'
+      name '-state-out=path'
+      notes <<-'NOTES'
       Path to write state to that is different than
       `-state`. This can be used to preserve the old
       state.
-      NAME
+      NOTES
     end
 
     entry do
-      command '-target=resource'
-      name <<-'NAME'
+      name '-target=resource'
+      notes <<-'NOTES'
       Resource to target. Operation will be limited to this
       resource and its dependencies. This flag can be used
       multiple times
-      NAME
+      NOTES
     end
 
     entry do
-      command '-var \'foo=bar\''
-      name <<-'NAME'
+      name '-var \'foo=bar\''
+      notes <<-'NOTES'
       Set a variable in the Terraform configuration. This
       flag can be set multiple times.
-      NAME
+      NOTES
     end
 
     entry do
-      command '-var-file=foo'
-      name <<-'NAME'
+      name '-var-file=foo'
+      notes <<-'NOTES'
       Set variables in the Terraform configuration from
       a file. If "terraform.tfvars" or any `.auto.tfvars`
       files are present, they will be automatically loaded.
-      NAME
+      NOTES
     end
   end
 end
