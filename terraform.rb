@@ -424,4 +424,131 @@ cheatsheet do
       NOTES
     end
   end
+
+  category do
+    id 'import'
+
+    entry do
+      notes <<-'NOTES'
+      __Import existing infrastructure into your Terraform state.__
+
+      This will find and import the specified resource into your Terraform
+      state, allowing existing infrastructure to come under Terraform
+      management without having to be initially created by Terraform.
+    
+      The ADDR specified is the address to import the resource to. Please
+      see the documentation online for resource addresses. The ID is a
+      resource-specific ID to identify that resource being imported. Please
+      reference the documentation for the resource type you're importing to
+      determine the ID syntax to use. It typically matches directly to the ID
+      that the provider uses.
+    
+      The current implementation of Terraform import can only import resources
+      into the state. It does not generate configuration. A future version of
+      Terraform will also generate configuration.
+    
+      Because of this, prior to running terraform import it is necessary to write
+      a resource configuration block for the resource manually, to which the
+      imported object will be attached.
+    
+      This command will not modify your infrastructure, but it will make
+      network requests to inspect parts of your infrastructure relevant to
+      the resource being imported.    
+      NOTES
+    end
+
+    entry do
+      name '-backup=path'
+      notes <<-'NOTES'
+      Path to backup the existing state file before
+      ".backup" extension. Set to "-" to disable backup.
+      NOTES
+    end
+
+    entry do
+      name '-config=path'
+      notes <<-'NOTES'
+      Path to a directory of Terraform configuration files
+      If no config files are present, they must be provided
+      via the input prompts or env vars.
+      NOTES
+    end
+                          
+    entry do
+      name '-allow-missing-config'
+      notes <<-'NOTES'
+      Allow import when no resource configuration block exists.
+      NOTES
+    end
+
+    entry do
+      name '-input=true'
+      notes <<-'NOTES'
+      Ask for input for variables if not directly set.
+      NOTES
+    end
+
+    entry do
+      name '-lock=true'
+      notes <<-'NOTES'
+      Lock the state file when locking is supported.
+      NOTES
+    end
+
+    entry do
+      name '-lock-timeout=0s'
+      notes <<-'NOTES'
+      Duration to retry a state lock.
+      NOTES
+    end
+
+    entry do
+      name '-no-color'
+      notes <<-'NOTES'
+      If specified, output won't contain any color.
+      NOTES
+    end
+
+    entry do
+      name '-provider=provider'
+      notes <<-'NOTES'
+      Deprecated: Override the provider configuration to use
+      provider specified in the configuration for the target
+      resource, and that is the best behavior in most cases.
+      NOTES
+    end
+                          
+    entry do
+      name '-state=PATH'
+      notes <<-'NOTES'
+      Path to the source state file. Defaults to the configured
+      backend, or "terraform.tfstate"
+      NOTES
+    end
+
+    entry do
+      name '-state-out=PATH'
+      notes <<-'NOTES'
+      Path to the destination state file to write to. If this
+      can be a new or existing path.
+      NOTES
+    end
+
+    entry do
+      name '-var \'foo=bar\''
+      notes <<-'NOTES'
+      Set a variable in the Terraform configuration. This
+      flag can be set multiple times. This is only useful
+      with the "-config" flag.
+      NOTES
+    end
+
+    entry do
+      name '-var-file=foo'
+      notes <<-'NOTES'
+      Set variables in the Terraform configuration from
+      files are present, they will be automatically loaded.
+      NOTES
+    end
+  end
 end
