@@ -379,4 +379,49 @@ cheatsheet do
       NOTES
     end
   end
+
+  category do
+    id 'graph'
+
+    entry do
+      notes <<-'NOTES'
+      Outputs the visual execution graph of Terraform resources according to
+      configuration files in DIR (or the current directory if omitted).
+    
+      The graph is outputted in DOT format. The typical program that can
+      read this format is GraphViz, but many web services are also available
+      to read this format.
+    
+      The -type flag can be used to control the type of graph shown. Terraform
+      creates different graphs for different operations. See the options below
+      for the list of types supported. The default type is "plan" if a
+      configuration is given, and "apply" if a plan file is passed as an
+      argument.
+      NOTES
+    end
+
+    entry do
+      name '-draw-cycles'
+      notes <<-'NOTES'
+      Highlight any cycles in the graph with colored edges.
+      This helps when diagnosing cycle errors.
+      NOTES
+    end
+
+    entry do
+      name '-type=plan'
+      notes <<-'NOTES'
+      Type of graph to output. Can be: plan, plan-destroy, apply,
+      validate, input, refresh.
+      NOTES
+    end
+
+    entry do
+      name '-module-depth=n'
+      notes <<-'NOTES'
+      __(deprecated)__ In prior versions of Terraform, specified the
+      depth of modules to show in the output.
+      NOTES
+    end
+  end
 end
