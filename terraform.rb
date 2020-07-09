@@ -113,7 +113,7 @@ cheatsheet do
     end
 
     entry do
-      name '-var \'foo=bar\''
+      name "-var 'foo=bar'"
       notes <<-'NOTES'
       Set a variable in the Terraform configuration. This
       flag can be set multiple times.
@@ -158,7 +158,7 @@ cheatsheet do
     end
 
     entry do
-      name '-var \'foo=bar\''
+      name "-var 'foo=bar'"
       notes <<-'NOTES'
         Set a variable in the Terraform configuration. This
         flag can be set multiple times.
@@ -270,7 +270,7 @@ cheatsheet do
     end
 
     entry do
-      name '-var \'foo=bar\''
+      name "-var 'foo=bar'"
       notes <<-'NOTES'
       Set a variable in the Terraform configuration. This
       flag can be set multiple times.
@@ -288,7 +288,7 @@ cheatsheet do
   end
 
   category do
-    id 'fmt'
+    id "fmt"
 
     entry do
       notes <<-'NOTES'
@@ -304,7 +304,7 @@ cheatsheet do
     end
 
     entry do
-      name '-list=false'
+      name "-list=false"
       notes <<-'NOTES'
       Don't list files whose formatting differs
       (always disabled if using STDIN)
@@ -312,7 +312,7 @@ cheatsheet do
     end
 
     entry do
-      name '-write=false'
+      name "-write=false"
       notes <<-'NOTES'
       Don't write to source files
       (always disabled if using STDIN or -check)
@@ -320,14 +320,14 @@ cheatsheet do
     end
 
     entry do
-      name '-diff'
+      name "-diff"
       notes <<-'NOTES'
       Display diffs of formatting changes
       NOTES
     end
 
     entry do
-      name '-check'
+      name "-check"
       notes <<-'NOTES'
       Check if the input is formatted. Exit status will be 0 if all
       input is properly formatted and non-zero otherwise.
@@ -335,14 +335,14 @@ cheatsheet do
     end
 
     entry do
-      name '-no-color'
+      name "-no-color"
       notes <<-'NOTES'
       If specified, output won't contain any color.
       NOTES
     end
 
     entry do
-      name '-recursive'
+      name "-recursive"
       notes <<-'NOTES'
       Also process files in subdirectories. By default, only the
       given directory (or current directory) is processed.
@@ -351,7 +351,7 @@ cheatsheet do
   end
 
   category do
-    id 'get'
+    id "get"
 
     entry do
       notes <<-'NOTES'
@@ -365,7 +365,7 @@ cheatsheet do
     end
 
     entry do
-      name '-update'
+      name "-update"
       notes <<-'NOTES'
       Check already-downloaded modules for available updates
       and install the newest versions available.
@@ -373,7 +373,7 @@ cheatsheet do
     end
 
     entry do
-      name '-no-color'
+      name "-no-color"
       notes <<-'NOTES'
       Disable text coloring in the output.
       NOTES
@@ -381,7 +381,7 @@ cheatsheet do
   end
 
   category do
-    id 'graph'
+    id "graph"
 
     entry do
       notes <<-'NOTES'
@@ -401,7 +401,7 @@ cheatsheet do
     end
 
     entry do
-      name '-draw-cycles'
+      name "-draw-cycles"
       notes <<-'NOTES'
       Highlight any cycles in the graph with colored edges.
       This helps when diagnosing cycle errors.
@@ -409,7 +409,7 @@ cheatsheet do
     end
 
     entry do
-      name '-type=plan'
+      name "-type=plan"
       notes <<-'NOTES'
       Type of graph to output. Can be: plan, plan-destroy, apply,
       validate, input, refresh.
@@ -417,7 +417,7 @@ cheatsheet do
     end
 
     entry do
-      name '-module-depth=n'
+      name "-module-depth=n"
       notes <<-'NOTES'
       __(deprecated)__ In prior versions of Terraform, specified the
       depth of modules to show in the output.
@@ -426,7 +426,7 @@ cheatsheet do
   end
 
   category do
-    id 'import'
+    id "import"
 
     entry do
       notes <<-'NOTES'
@@ -458,7 +458,7 @@ cheatsheet do
     end
 
     entry do
-      name '-backup=path'
+      name "-backup=path"
       notes <<-'NOTES'
       Path to backup the existing state file before
       ".backup" extension. Set to "-" to disable backup.
@@ -466,60 +466,60 @@ cheatsheet do
     end
 
     entry do
-      name '-config=path'
+      name "-config=path"
       notes <<-'NOTES'
       Path to a directory of Terraform configuration files
       If no config files are present, they must be provided
       via the input prompts or env vars.
       NOTES
     end
-                          
+
     entry do
-      name '-allow-missing-config'
+      name "-allow-missing-config"
       notes <<-'NOTES'
       Allow import when no resource configuration block exists.
       NOTES
     end
 
     entry do
-      name '-input=true'
+      name "-input=true"
       notes <<-'NOTES'
       Ask for input for variables if not directly set.
       NOTES
     end
 
     entry do
-      name '-lock=true'
+      name "-lock=true"
       notes <<-'NOTES'
       Lock the state file when locking is supported.
       NOTES
     end
 
     entry do
-      name '-lock-timeout=0s'
+      name "-lock-timeout=0s"
       notes <<-'NOTES'
       Duration to retry a state lock.
       NOTES
     end
 
     entry do
-      name '-no-color'
+      name "-no-color"
       notes <<-'NOTES'
       If specified, output won't contain any color.
       NOTES
     end
 
     entry do
-      name '-provider=provider'
+      name "-provider=provider"
       notes <<-'NOTES'
       Deprecated: Override the provider configuration to use
       provider specified in the configuration for the target
       resource, and that is the best behavior in most cases.
       NOTES
     end
-                          
+
     entry do
-      name '-state=PATH'
+      name "-state=PATH"
       notes <<-'NOTES'
       Path to the source state file. Defaults to the configured
       backend, or "terraform.tfstate"
@@ -527,7 +527,7 @@ cheatsheet do
     end
 
     entry do
-      name '-state-out=PATH'
+      name "-state-out=PATH"
       notes <<-'NOTES'
       Path to the destination state file to write to. If this
       can be a new or existing path.
@@ -535,7 +535,7 @@ cheatsheet do
     end
 
     entry do
-      name '-var \'foo=bar\''
+      name "-var 'foo=bar'"
       notes <<-'NOTES'
       Set a variable in the Terraform configuration. This
       flag can be set multiple times. This is only useful
@@ -544,7 +544,7 @@ cheatsheet do
     end
 
     entry do
-      name '-var-file=foo'
+      name "-var-file=foo"
       notes <<-'NOTES'
       Set variables in the Terraform configuration from
       files are present, they will be automatically loaded.
