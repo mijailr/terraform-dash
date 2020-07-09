@@ -349,4 +349,34 @@ cheatsheet do
       NOTES
     end
   end
+
+  category do
+    id 'get'
+
+    entry do
+      notes <<-'NOTES'
+      __Downloads and installs modules needed for the configuration given by PATH.__
+
+      This recursively downloads all modules needed, such as modules
+      imported by modules imported by the root and so on. If a module is
+      already downloaded, it will not be redownloaded or checked for updates
+      unless the -update flag is specified.
+      NOTES
+    end
+
+    entry do
+      name '-update'
+      notes <<-'NOTES'
+      Check already-downloaded modules for available updates
+      and install the newest versions available.
+      NOTES
+    end
+
+    entry do
+      name '-no-color'
+      notes <<-'NOTES'
+      Disable text coloring in the output.
+      NOTES
+    end
+  end
 end
