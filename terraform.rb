@@ -286,4 +286,67 @@ cheatsheet do
       NOTES
     end
   end
+
+  category do
+    id 'fmt'
+
+    entry do
+      notes <<-'NOTES'
+      __Rewrites all Terraform configuration files to a canonical format.__
+      
+      Both configuration files (.tf) and variables files (.tfvars) are updated.
+      JSON files (.tf.json or .tfvars.json) are not modified.
+
+      If DIR is not specified then the current working directory will be used.
+      If DIR is "-" then content will be read from STDIN. The given content must
+      be in the Terraform language native syntax; JSON is not supported.
+      NOTES
+    end
+
+    entry do
+      name '-list=false'
+      notes <<-'NOTES'
+      Don't list files whose formatting differs
+      (always disabled if using STDIN)
+      NOTES
+    end
+
+    entry do
+      name '-write=false'
+      notes <<-'NOTES'
+      Don't write to source files
+      (always disabled if using STDIN or -check)
+      NOTES
+    end
+
+    entry do
+      name '-diff'
+      notes <<-'NOTES'
+      Display diffs of formatting changes
+      NOTES
+    end
+
+    entry do
+      name '-check'
+      notes <<-'NOTES'
+      Check if the input is formatted. Exit status will be 0 if all
+      input is properly formatted and non-zero otherwise.
+      NOTES
+    end
+
+    entry do
+      name '-no-color'
+      notes <<-'NOTES'
+      If specified, output won't contain any color.
+      NOTES
+    end
+
+    entry do
+      name '-recursive'
+      notes <<-'NOTES'
+      Also process files in subdirectories. By default, only the
+      given directory (or current directory) is processed.
+      NOTES
+    end
+  end
 end
