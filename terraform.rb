@@ -174,4 +174,116 @@ cheatsheet do
         NOTES
     end
   end
+
+  category do
+    id "destroy"
+
+    entry do
+      notes <<-'NOTES'
+      __Destroy Terraform-managed infrastructure.__
+      NOTES
+    end
+
+    entry do
+      name "-backup=path"
+      notes <<-'NOTES'
+      Path to backup the existing state file before
+      modifying. Defaults to the "-state-out" path with
+      ".backup" extension. Set to "-" to disable backup.
+      NOTES
+    end
+
+    entry do
+      name "-auto-approve"
+      notes <<-'NOTES'
+      Skip interactive approval before destroying.
+      NOTES
+    end
+
+    entry do
+      name "-force"
+      notes <<-'NOTES'
+      Deprecated: same as auto-approve.
+      NOTES
+    end
+
+    entry do
+      name "-lock=true"
+      notes <<-'NOTES'
+      Lock the state file when locking is supported.
+      NOTES
+    end
+
+    entry do
+      name "-lock-timeout=0s"
+      notes <<-'NOTES'
+      Duration to retry a state lock.
+      NOTES
+    end
+
+    entry do
+      name "-no-color"
+      notes <<-'NOTES'
+      If specified, output won't contain any color.
+      NOTES
+    end
+
+    entry do
+      name "-parallelism=n"
+      notes <<-'NOTES'
+      Limit the number of concurrent operations.
+      Defaults to 10.
+      NOTES
+    end
+
+    entry do
+      name "-refresh=true"
+      notes <<-'NOTES'
+      Update state prior to checking for differences. This
+      has no effect if a plan file is given to apply.
+      NOTES
+    end
+
+    entry do
+      name "-state=path"
+      notes <<-'NOTES'
+      Path to read and save state (unless state-out
+      is specified). Defaults to "terraform.tfstate".
+      NOTES
+    end
+
+    entry do
+      name "-state-out=path"
+      notes <<-'NOTES'
+      Path to write state to that is different than
+      state.
+      NOTES
+    end
+
+    entry do
+      name "-target=resource"
+      notes <<-'NOTES'
+      Resource to target. Operation will be limited to this
+      resource and its dependencies. This flag can be used
+      multiple times.
+      NOTES
+    end
+
+    entry do
+      name '-var \'foo=bar\''
+      notes <<-'NOTES'
+      Set a variable in the Terraform configuration. This
+      flag can be set multiple times.
+      NOTES
+    end
+
+    entry do
+      name "-var-file=foo"
+      notes <<-'NOTES'
+      Set variables in the Terraform configuration from
+      a file. If "terraform.tfvars" or any ".auto.tfvars"
+      files are present, they will be automatically loaded.
+      NOTES
+    end
+  end
 end
