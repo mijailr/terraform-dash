@@ -551,4 +551,139 @@ cheatsheet do
       NOTES
     end
   end
+
+  category do
+    id "init"
+
+    entry do
+      notes <<-'NOTES'
+      __Initialize a new or existing Terraform working directory by creating
+      initial files, loading any remote state, downloading modules, etc.__
+    
+      This is the first command that should be run for any new or existing
+      Terraform configuration per machine. This sets up all the local data
+      necessary to run Terraform that is typically not committed to version
+      control.
+    
+      This command is always safe to run multiple times. Though subsequent runs
+      may give errors, this command will never delete your configuration or
+      state. Even so, if you have important information, please back it up prior
+      to running this command, just in case.
+    
+      If no arguments are given, the configuration in this working directory
+      is initialized.
+      NOTES
+    end
+
+    entry do
+      name "-backend=true"
+      notes <<-'NOTES'
+      Configure the backend for this configuration.
+      NOTES
+    end
+
+    entry do
+      name "-backend-config=path"
+      notes <<-'NOTES'
+      This can be either a path to an HCL file with key/value
+      assignments (same format as terraform.tfvars) or a
+      'key=value' format. This is merged with what is in the
+      configuration file. This can be specified multiple
+      times. The backend type must be in the configuration
+      itself.
+      NOTES
+    end
+
+    entry do
+      name "-force-copy"
+      notes <<-'NOTES'
+      Suppress prompts about copying state data. This is
+      prompts.
+      NOTES
+    end
+
+    entry do
+      name "-from-module=SOURCE"
+      notes <<-'NOTES'
+      Copy the contents of the given module into the target
+      directory before initialization.
+      NOTES
+    end
+
+    entry do
+      name "-get=true"
+      notes <<-'NOTES'
+      Download any modules for this configuration.
+      NOTES
+    end
+
+    entry do
+      name "-get-plugins=true"
+      notes <<-'NOTES'
+      Download any missing plugins for this configuration.
+      NOTES
+    end
+
+    entry do
+      name "-input=true"
+      notes <<-'NOTES'
+      Ask for input if necessary. If false, will error if
+      input was required.
+      NOTES
+    end
+
+    entry do
+      name "-lock=true"
+      notes <<-'NOTES'
+      Lock the state file when locking is supported.
+      NOTES
+    end
+
+    entry do
+      name "-lock-timeout=0s"
+      notes <<-'NOTES'
+      Duration to retry a state lock.
+      NOTES
+    end
+
+    entry do
+      name "-no-color"
+      notes <<-'NOTES'
+      If specified, output won't contain any color.
+      NOTES
+    end
+
+    entry do
+      name "-plugin-dir"
+      notes <<-'NOTES'
+      Directory containing plugin binaries. This overrides all
+      automatic installation of plugins. This flag can be used
+      multiple times.
+      NOTES
+    end
+
+    entry do
+      name "-reconfigure"
+      notes <<-'NOTES'
+      Reconfigure the backend, ignoring any saved
+      configuration.
+      NOTES
+    end
+
+    entry do
+      name "-upgrade=false"
+      notes <<-'NOTES'
+      If installing modules (-get) or plugins (-get-plugins),
+      latest version allowed within configured constraints.
+      NOTES
+    end
+
+    entry do
+      name "-verify-plugins=true"
+      notes <<-'NOTES'
+      Verify the authenticity and integrity of automatically
+      downloaded plugins.
+      NOTES
+    end
+  end
 end
