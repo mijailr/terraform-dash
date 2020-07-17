@@ -821,7 +821,7 @@ cheatsheet do
       Lock the state file when locking is supported.
       NOTES
     end
-    
+
     entry do
       name "-lock-timeout=0s"
       notes <<-'NOTES'
@@ -887,6 +887,30 @@ cheatsheet do
       notes <<-'NOTES'
       Set variables in the Terraform configuration from
       files are present, they will be automatically loaded.
+      NOTES
+    end
+  end
+
+  category do
+    id "providers"
+
+    entry do
+      notes <<-'NOTES'
+      Usage: `terraform providers [dir]`
+
+      Prints out a tree of modules in the referenced configuration annotated with
+      their provider requirements.
+    
+      This provides an overview of all of the provider requirements across all
+      referenced modules, as an aid to understanding why particular provider
+      plugins are needed and why particular versions are selected.    
+      NOTES
+    end
+
+    entry do
+      name "schema"
+      notes <<-'NOTES'
+      Prints the schemas of the providers used in the configuration.
       NOTES
     end
   end
