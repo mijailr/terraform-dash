@@ -914,4 +914,113 @@ cheatsheet do
       NOTES
     end
   end
+
+  category do
+    id "refresh"
+
+    entry do
+      notes <<-'NOTES'
+      Usage: `terraform refresh [options] [dir]`
+
+      Update the state file of your infrastructure with metadata that matches
+      the physical resources they are tracking.
+
+      This will not modify your infrastructure, but it can modify your
+      state file to update metadata. This metadata might cause new changes
+      to occur when you generate a plan or call apply next.   
+      NOTES
+    end
+
+    entry do
+      name "schema"
+      notes <<-'NOTES'
+      Prints the schemas of the providers used in the configuration.
+      NOTES
+    end
+
+    entry do
+      name "-backup=path"
+      notes <<-'NOTES'
+      Path to backup the existing state file before
+      ".backup" extension. Set to "-" to disable backup.
+      NOTES
+    end
+
+    entry do
+      name "-compact-warnings"
+      notes <<-'NOTES'
+      If Terraform produces any warnings that are not
+      accompanied by errors, show them in a more compact form
+      that includes only the summary messages.
+      NOTES
+    end
+
+    entry do
+      name "-input=true"
+      notes <<-'NOTES'
+      Ask for input for variables if not directly set.
+      NOTES
+    end
+
+    entry do
+      name "-lock=true"
+      notes <<-'NOTES'
+      Lock the state file when locking is supported.
+      NOTES
+    end
+
+    entry do
+      name "-lock-timeout=0s"
+      notes <<-'NOTES'
+      Duration to retry a state lock.
+      NOTES
+    end
+
+    entry do
+      name "-no-color"
+      notes <<-'NOTES'
+      If specified, output won't contain any color.
+      NOTES
+    end
+
+    entry do
+      name "-state=path"
+      notes <<-'NOTES'
+      Path to read and save state (unless state-out
+      is specified). Defaults to "terraform.tfstate".
+      NOTES
+    end
+
+    entry do
+      name "-state-out=path"
+      notes <<-'NOTES'
+      Path to write updated state file. By default, the
+      "-state" path will be used.
+      NOTES
+    end
+
+    entry do
+      name "-target=resource"
+      notes <<-'NOTES'
+      Resource to target. Operation will be limited to this
+      multiple times.
+      NOTES
+    end
+
+    entry do
+      name "-var 'foo=bar'"
+      notes <<-'NOTES'
+      Set a variable in the Terraform configuration. This
+      flag can be set multiple times.
+      NOTES
+    end
+
+    entry do
+      name "-var-file=foo"
+      notes <<-'NOTES'
+      Set variables in the Terraform configuration from
+      files are present, they will be automatically loaded.
+      NOTES
+    end
+  end
 end
