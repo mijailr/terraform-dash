@@ -707,4 +707,21 @@ cheatsheet do
       NOTES
     end
   end
+
+  category do
+    id "logout"
+
+    entry do
+      notes <<-'NOTES'
+      Usage: `terraform logout [hostname]``
+
+      Removes locally-stored credentials for specified hostname.
+    
+      Note: the API token is only removed from local storage, not destroyed on the
+      remote server, so it will remain valid until manually revoked.
+    
+      If no hostname is provided, the default hostname is app.terraform.io.
+      NOTES
+    end
+  end
 end
