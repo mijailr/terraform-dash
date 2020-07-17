@@ -724,4 +724,43 @@ cheatsheet do
       NOTES
     end
   end
+
+  category do
+    id "output"
+
+    entry do
+      notes <<-'NOTES'
+      Usage: `terraform output [options] [NAME]`
+
+      Reads an output variable from a Terraform state file and prints
+      the value. With no additional arguments, output will display all
+      the outputs for the root module.  If NAME is not specified, all
+      outputs are printed.
+      NOTES
+    end
+
+    entry do
+      name "-state=path"
+      notes <<-'NOTES'
+      Path to the state file to read. Defaults to
+      "terraform.tfstate".
+      NOTES
+    end
+
+    entry do
+      name "-no-color"
+      notes <<-'NOTES'
+      If specified, output won't contain any color.
+      
+      NOTES
+    end
+
+    entry do
+      name "-json"
+      notes <<-'NOTES'
+      If specified, machine readable output will be
+      printed in JSON format
+      NOTES
+    end
+  end
 end
