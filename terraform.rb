@@ -763,4 +763,131 @@ cheatsheet do
       NOTES
     end
   end
+
+  category do
+    id "plan"
+
+    entry do
+      notes <<-'NOTES'
+      Usage: `terraform plan [options] [DIR]`
+
+      Generates an execution plan for Terraform.
+
+      This execution plan can be reviewed prior to running apply to get a
+      sense for what Terraform will do. Optionally, the plan can be saved to
+      a Terraform plan file, and apply can take this plan file to execute
+      this plan exactly.
+      NOTES
+    end
+    entry do
+      name "-compact-warnings"
+      notes <<-'NOTES'
+      If Terraform produces any warnings that are not
+      accompanied by errors, show them in a more compact form
+      that includes only the summary messages.
+      NOTES
+    end
+
+    entry do
+      name "-destroy"
+      notes <<-'NOTES'
+      If set, a plan will be generated to destroy all resources
+      managed by the given configuration and state.
+      NOTES
+    end
+
+    entry do
+      name "-detailed-exitcode"
+      notes <<-'NOTES'
+      Return detailed exit codes when the command exits. This
+      will change the meaning of exit codes to:
+          0 - Succeeded, diff is empty (no changes)
+          1 - Errored
+          2 - Succeeded, there is a diff
+      NOTES
+    end
+
+    entry do
+      name "-input=true"
+      notes <<-'NOTES'
+      Ask for input for variables if not directly set.
+      
+      NOTES
+    end
+
+    entry do
+      name "-lock=true"
+      notes <<-'NOTES'
+      Lock the state file when locking is supported.
+      NOTES
+    end
+    
+    entry do
+      name "-lock-timeout=0s"
+      notes <<-'NOTES'
+      Duration to retry a state lock.
+      NOTES
+    end
+
+    entry do
+      name "-no-color"
+      notes <<-'NOTES'
+      If specified, output won't contain any color.
+      NOTES
+    end
+
+    entry do
+      name "-out=path"
+      notes <<-'NOTES'
+      Write a plan file to the given path. This can be used as
+      input to the "apply" command.
+      NOTES
+    end
+
+    entry do
+      name "-parallelism=n"
+      notes <<-'NOTES'
+      Limit the number of concurrent operations. Defaults to 10.
+      NOTES
+    end
+
+    entry do
+      name "-refresh=true"
+      notes <<-'NOTES'
+      Update state prior to checking for differences.
+      NOTES
+    end
+
+    entry do
+      name "-state=statefile"
+      notes <<-'NOTES'
+      Path to a Terraform state file to use to look
+      use the state "terraform.tfstate" if it exists.
+      NOTES
+    end
+
+    entry do
+      name "-target=resource"
+      notes <<-'NOTES'
+      Resource to target. Operation will be limited to this
+      multiple times.
+      NOTES
+    end
+
+    entry do
+      name "-var 'foo=bar'"
+      notes <<-'NOTES'
+      Set a variable in the Terraform configuration. This
+      flag can be set multiple times.
+      NOTES
+    end
+
+    entry do
+      name "-var-file=foo"
+      notes <<-'NOTES'
+      Set variables in the Terraform configuration from
+      files are present, they will be automatically loaded.
+      NOTES
+    end
+  end
 end
