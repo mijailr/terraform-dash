@@ -686,4 +686,25 @@ cheatsheet do
       NOTES
     end
   end
+
+  category do
+    id "login"
+
+    entry do
+      notes <<-'NOTES'
+      Usage: `terraform login [hostname]`
+      Retrieves an authentication token for the given hostname, if it supports
+      automatic login, and saves it in a credentials file in your home directory.
+    
+      If no hostname is provided, the default hostname is app.terraform.io, to
+      log in to Terraform Cloud.
+    
+      If not overridden by credentials helper settings in the CLI configuration,
+      the credentials will be written to the following local file:
+      ```
+      ~/.terraform.d/credentials.tfrc.json
+      ```
+      NOTES
+    end
+  end
 end
