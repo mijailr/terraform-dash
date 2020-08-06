@@ -1125,4 +1125,77 @@ cheatsheet do
       NOTES
     end
   end
+
+  category do
+    id "untaint"
+
+    entry do
+      notes <<-'NOTES'
+      Usage: terraform untaint [options] name
+
+      Manually unmark a resource as tainted, restoring it as the primary
+      instance in the state.  This reverses either a manual 'terraform taint'
+      or the result of provisioners failing on a resource.
+      
+      This will not modify your infrastructure. This command changes your
+      state to unmark a resource as tainted.  This command can be undone by
+      reverting the state backup file that is created, or by running
+      'terraform taint' on the resource.
+      NOTES
+    end
+
+    entry do
+      name "-allow-missing"
+      notes <<-'NOTES'
+      If specified, the command will succeed (exit code 0)
+      even if the resource is missing.
+      NOTES
+    end
+
+    entry do
+      name "-backup=path"
+      notes <<-'NOTES'
+      Path to backup the existing state file before
+      ".backup" extension. Set to "-" to disable backup.
+      NOTES
+    end
+
+    entry do
+      name "-lock=true"
+      notes <<-'NOTES'
+      Lock the state file when locking is supported.
+      NOTES
+    end
+
+    entry do
+      name "-lock-timeout=0s"
+      notes <<-'NOTES'
+      Duration to retry a state lock.
+      NOTES
+    end
+
+    entry do
+      name "-module=path"
+      notes <<-'NOTES'
+      The module path where the resource lives. By
+      by names. Ex. "consul" or "consul.vpc" (nested modules).
+      NOTES
+    end
+
+    entry do
+      name "-state=path"
+      notes <<-'NOTES'
+      Path to read and save state (unless state-out
+      is specified). Defaults to "terraform.tfstate".
+      NOTES
+    end
+
+    entry do
+      name "-state-out=path"
+      notes <<-'NOTES'
+      Path to write updated state file. By default, the
+      "-state" path will be used.
+      NOTES
+    end
+  end
 end
