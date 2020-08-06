@@ -9,6 +9,7 @@ Dash is an API Documentation Browser and Code Snippet Manager. Dash instantly se
 
 ## Instalation
 
-1. [Download the latest docset](https://github.com/mijailr/terraform-dash/releases/latest)
+1. [Download the latest docset](https://github.com/mijailr/terraform-dash/releases/latest/download/terraform-docset.zip)
+3. Unzip
 2. Import to dash
 
