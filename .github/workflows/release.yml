@@ -30,7 +30,7 @@ jobs:
     - name: Build docset
       run: |
         bundle exec cheatset generate terraform.rb
-        zip terraform-docset.zip Terraform.docset
+        zip -r terraform-docset.zip Terraform.docset
 
     - uses: actions/upload-artifact@v2
       with:
