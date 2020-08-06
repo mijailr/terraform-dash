@@ -1051,4 +1051,78 @@ cheatsheet do
       NOTES
     end
   end
+
+  category do
+    id "taint"
+
+    entry do
+      notes <<-'NOTES'
+      Usage: terraform taint [options] <address>
+
+      Manually mark a resource as tainted, forcing a destroy and recreate
+      on the next plan/apply.
+      
+      This will not modify your infrastructure. This command changes your
+      state to mark a resource as tainted so that during the next plan or
+      apply that resource will be destroyed and recreated. This command on
+      its own will not modify infrastructure. This command can be undone
+      using the "terraform untaint" command with the same address.
+      
+      The address is in the usual resource address syntax, as shown in
+      the output from other commands, such as:
+
+      ```
+      aws_instance.foo
+      aws_instance.bar[1]
+      module.foo.module.bar.aws_instance.baz
+      ``` 
+      NOTES
+    end
+
+    entry do
+      name "-allow-missing"
+      notes <<-'NOTES'
+      If specified, the command will succeed (exit code 0)
+      even if the resource is missing.
+      NOTES
+    end
+
+    entry do
+      name "-backup=path"
+      notes <<-'NOTES'
+      Path to backup the existing state file before
+      ".backup" extension. Set to "-" to disable backup.
+      NOTES
+    end
+
+    entry do
+      name "-lock=true"
+      notes <<-'NOTES'
+      Lock the state file when locking is supported.
+      NOTES
+    end
+
+    entry do
+      name "-lock-timeout=0s"
+      notes <<-'NOTES'
+      Duration to retry a state lock.
+      NOTES
+    end
+
+    entry do
+      name "-state=path"
+      notes <<-'NOTES'
+      Path to read and save state (unless state-out
+      is specified). Defaults to "terraform.tfstate".
+      NOTES
+    end
+
+    entry do
+      name "-state-out=path"
+      notes <<-'NOTES'
+      Path to write updated state file. By default, the
+      "-state" path will be used.
+      NOTES
+    end
+  end
 end
