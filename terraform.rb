@@ -1023,4 +1023,32 @@ cheatsheet do
       NOTES
     end
   end
+
+  category do
+    id "show"
+
+    entry do
+      notes <<-'NOTES'
+      Usage: terraform show [options] [path]
+
+      Reads and outputs a Terraform state or plan file in a human-readable
+      form. If no path is specified, the current state will be shown.  
+      NOTES
+    end
+
+    entry do
+      name "-no-color"
+      notes <<-'NOTES'
+      If specified, output won't contain any color.
+      NOTES
+    end
+
+    entry do
+      name "-json"
+      notes <<-'NOTES'
+      If specified, output the Terraform plan or state in
+      a machine-readable form.
+      NOTES
+    end
+  end
 end
