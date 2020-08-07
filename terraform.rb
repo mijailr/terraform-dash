@@ -1257,4 +1257,69 @@ cheatsheet do
       NOTES
     end
   end
+
+  category do
+    id "workspace"
+
+    entry do
+      notes <<-'NOTES'
+      Usage: terraform workspace
+
+      new, list, show, select and delete Terraform workspaces.
+      NOTES
+    end
+
+    entry do
+      name "delete"
+      notes <<-'NOTES'
+      Usage: terraform workspace delete [OPTIONS] NAME [DIR]
+
+      Delete a Terraform workspace
+
+      Options:
+
+      `-force`    remove a non-empty workspace.
+  
+      `-lock=true`          Lock the state file when locking is supported.
+  
+      `-lock-timeout=0s`    Duration to retry a state lock.
+      NOTES
+    end
+
+    entry do
+      name "list"
+      notes <<-'NOTES'
+      Usage: terraform workspace list [DIR]
+
+      List Terraform workspaces.
+      NOTES
+    end
+
+    entry do
+      name "new"
+      notes <<-'NOTES'
+      Usage: terraform workspace new [OPTIONS] NAME [DIR]
+
+      Create a new Terraform workspace.
+      NOTES
+    end
+
+    entry do
+      name "select"
+      notes <<-'NOTES'
+      Usage: terraform workspace select NAME [DIR]
+
+      Select a different Terraform workspace.
+      NOTES
+    end
+
+    entry do
+      name "show"
+      notes <<-'NOTES'
+      Usage: terraform workspace show
+
+      Show the name of the current workspace.
+      NOTES
+    end
+  end
 end
