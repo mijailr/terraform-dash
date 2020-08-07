@@ -1400,4 +1400,17 @@ cheatsheet do
       NOTES
     end
   end
+
+  category do
+    id "push"
+
+    entry do
+      notes <<-'NOTES'
+      Usage: terraform push [options] [DIR]
+
+      This command was for the legacy version of Terraform Enterprise (v1), which
+      has now reached end-of-life. Therefore this command is no longer supported.
+      NOTES
+    end
+  end
 end
