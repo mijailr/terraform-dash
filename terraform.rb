@@ -1327,7 +1327,6 @@ cheatsheet do
     id "0.12upgrade"
 
     entry do
-      name ""
       notes <<-'NOTES'
       Usage: terraform 0.12upgrade [module-dir]
 
@@ -1367,7 +1366,6 @@ cheatsheet do
     id "debug"
 
     entry do
-      name ""
       notes <<-'NOTES'
       Usage: terraform debug <subcommand> [options] [args]
 
@@ -1377,6 +1375,29 @@ cheatsheet do
           json2dot    Convert json graph log to dot
       NOTES
     end
+  end
 
+  category do
+    id "force-unlock"
+
+    entry do
+      notes <<-'NOTES'
+      Usage: terraform force-unlock LOCK_ID [DIR]
+
+      Manually unlock the state for the defined configuration.
+      
+      This will not modify your infrastructure. This command removes the lock on the
+      state for the current configuration. The behavior of this lock is dependent
+      on the backend being used. Local state files cannot be unlocked by another
+      process.
+      NOTES
+    end
+
+    entry do
+      name "-force"
+      notes <<-'NOTES'
+      Don't ask for input for unlock confirmation.
+      NOTES
+    end
   end
 end
