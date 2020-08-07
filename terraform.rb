@@ -1413,4 +1413,70 @@ cheatsheet do
       NOTES
     end
   end
+
+  category do
+    id "push"
+
+    entry do
+      notes <<-'NOTES'
+      Usage: terraform state <subcommand> [options] [args]
+
+      This command has subcommands for advanced state management.
+      
+      These subcommands can be used to slice and dice the Terraform state.
+      This is sometimes necessary in advanced cases. For your safety, all
+      state management commands that modify the state create a timestamped
+      backup of the state prior to making modifications.
+      
+      The structure and output of the commands is specifically tailored to work
+      well with the common Unix utilities such as grep, awk, etc. We recommend
+      using those tools to perform more advanced state tasks.
+      
+      Subcommands:
+          list    List resources in the state
+          mv      Move an item in the state
+          pull    Pull current state and output to stdout
+          push    Update remote state from a local state file
+          rm      Remove instances from the state
+          show    Show a resource in the state      
+      NOTES
+    end
+  end
+
+  category do
+    id "state"
+
+    entry do
+      notes <<-'NOTES'
+      Usage: terraform state list [options] [address...]
+
+      List resources in the Terraform state.
+      
+      This command lists resource instances in the Terraform state. The address
+      argument can be used to filter the instances by resource or module. If
+      no pattern is given, all resource instances are listed.
+      
+      The addresses must either be module addresses or absolute resource
+      addresses, such as:
+          aws_instance.example
+          module.example
+          module.example.module.child
+          module.example.aws_instance.example
+      
+      An error will be returned if any of the resources or modules given as
+      filter addresses do not exist in the state.
+      
+      Options:
+      
+        -state=statefile    Path to a Terraform state file to use to look
+                            up Terraform-managed resources. By default, Terraform
+                            will consult the state of the currently-selected
+                            workspace.
+      
+        -id=ID              Filters the results to include only instances whose
+                            resource types have an attribute named "id" whose value
+                            equals the given id string.      
+      NOTES
+    end
+  end
 end
