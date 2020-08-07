@@ -1322,4 +1322,44 @@ cheatsheet do
       NOTES
     end
   end
+
+  category do
+    id "0.12upgrade"
+
+    entry do
+      name ""
+      notes <<-'NOTES'
+      Usage: terraform 0.12upgrade [module-dir]
+
+      Rewrites the .tf files for a single module that was written for a Terraform
+      version prior to v0.12 so that it uses new syntax features from v0.12
+      and later.
+      
+      Also rewrites constructs that behave differently after v0.12, and flags any
+      suspicious constructs that require human review,
+      
+      By default, 0.12upgrade rewrites the files in the current working directory.
+      However, a path to a different directory can be provided. The command will
+      prompt for confirmation interactively unless the -yes option is given.
+      NOTES
+    end
+
+    entry do
+      name "-yes"
+      notes <<-'NOTES'
+      Skip the initial introduction messages and interactive
+      batch from a script.
+      NOTES
+    end
+
+    entry do
+      name "-force"
+      notes <<-'NOTES'
+      Override the heuristic that attempts to detect if a
+      Some of the transformations made by this command are
+      not idempotent, so re-running against the same module
+      may change the meanings expressions in the module.
+      NOTES
+    end
+  end
 end
