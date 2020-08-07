@@ -1362,4 +1362,21 @@ cheatsheet do
       NOTES
     end
   end
+
+  category do
+    id "debug"
+
+    entry do
+      name ""
+      notes <<-'NOTES'
+      Usage: terraform debug <subcommand> [options] [args]
+
+      This command has subcommands for debug output management
+      
+      Subcommands:
+          json2dot    Convert json graph log to dot
+      NOTES
+    end
+
+  end
 end
