@@ -1247,4 +1247,14 @@ cheatsheet do
       NOTES
     end
   end
+
+  category do
+    id "version"
+
+    entry do
+      notes <<-'NOTES'
+      Get terraform current version details
+      NOTES
+    end
+  end
 end
